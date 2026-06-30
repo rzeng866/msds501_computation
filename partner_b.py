@@ -8,7 +8,7 @@
 # YOUR TASK (Task 2): Run this script and read the error.
 #   - What type of error is it? ValueError: Invalid literal for int() with base 10: 'absent'
 #   - Which line causes it? Line 36 
-#   - Write a comment below explaining the cause.
+#   - Write a comment below explaining the cause. Since 'absent' and 'n/a' are not an int, it is causing a ValueError.  
 #
 # YOUR TASK (Task 3): Wrap the risky conversion in try/except.
 #   - Catch the specific error type (not bare except:)
