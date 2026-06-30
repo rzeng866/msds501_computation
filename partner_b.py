@@ -6,8 +6,8 @@
 # to convert every entry to an int so we can compute the total.
 #
 # YOUR TASK (Task 2): Run this script and read the error.
-#   - What type of error is it?
-#   - Which line causes it?
+#   - What type of error is it? ValueError: Invalid literal for int() with base 10: 'absent'
+#   - Which line causes it? Line 36 
 #   - Write a comment below explaining the cause.
 #
 # YOUR TASK (Task 3): Wrap the risky conversion in try/except.
@@ -33,9 +33,13 @@ scores = ['88', '95', 'absent', '72', 'n/a', '84']
 valid = []
 
 for i, s in enumerate(scores):
-    score = int(s)            # <-- this line crashes on bad strings
-    print(f'Score [{i}]: {score}')
-    valid.append(score)
+    try:
+        score = int(s)            # <-- this line crashes on bad strings
+        print(f'Score [{i}]: {score}')
+        valid.append(score)
+    except ValueError:
+        print(f'Skipped bad score: {s}')
+        
 
 print(f'Total of valid scores: {sum(valid)}')
 print(f'Count of valid scores: {len(valid)}')
